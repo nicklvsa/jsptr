@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- This is just a fun poc -->
+    <!-- Note that this library only works with js embeded directly within an html file -->
+    <script use_refs nomodule>
+        let data = "example";
+        let other = "hello";
+
+        const ptrData = _ptr(data);
+        const ptrOther = _ptr(other);
+
+        function test() {
+            ptrData.v = "new value";
+            ptrOther.v = "some new value";
+        }
+
+        document.write(other + '<br/>');
+        test();
+        document.write(other);
+    </script>
+    <script src="jsptr.js"></script>
+</body>
+</html>
