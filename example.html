@@ -8,21 +8,24 @@
     <!-- This is just a fun poc -->
     <!-- Note that this library only works with js embeded directly within an html file -->
     <script use_refs nomodule>
-        let data = "example";
-        let other = "hello";
+        let data = 22;
 
-        const ptrData = _ptr(data);
-        const ptrOther = _ptr(other);
+        const ptrData = ptr$(data);
 
-        function test() {
-            ptrData.v = "new value";
-            ptrOther.v = "some new value";
-        }
+        function test1(input) {
+            console.log('some code running');
+            test_ptr(input);
+            function test(test) {
+                //test.v = "code";
+            }
+            test(input);
+        }   
+        test1(ptrData);
 
-        document.write(other + '<br/>');
-        test();
-        document.write(other);
+
+        document.write(data);
     </script>
+    <script src="test.js"></script>
     <script src="jsptr.js"></script>
 </body>
 </html>
